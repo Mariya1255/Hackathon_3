@@ -2,7 +2,8 @@ import React from 'react'
 import {FaFacebook, FaGithub} from 'react-icons/fa'
 import {IoLogoVercel} from 'react-icons/io5'
 import {FaLinkedin } from 'react-icons/fa'
-import Link from "next/link"
+import Link from 'next/link'
+
 
 function Footer() {
   return (
@@ -48,19 +49,19 @@ function Footer() {
         </h2>
         <nav className="list-none mb-10">
           <li>
-            <a className="text-gray-600 hover:text-gray-800  ml-6">Laptops & Computers</a>
+            <Link className="text-gray-600 hover:text-gray-800  ml-6" href='/ Computers'>Laptops & Computers</Link>
           </li>
           <li>
-            <a className="text-gray-600 hover:text-gray-800 ml-6">Cameras & Photography</a>
+            <Link className="text-gray-600 hover:text-gray-800 ml-6" href='/ Photography'>Cameras & Photography</Link>
           </li>
           <li>
-            <a className="text-gray-600 hover:text-gray-800 ml-6">Smart Phones & Tablets</a>
+            <Link className="text-gray-600 hover:text-gray-800 ml-6" href='/ Tablets'>Smart Phones & Tablets</Link>
           </li>
           <li>
-            <a className="text-gray-600 hover:text-gray-800 ml-6">Video Games & Consoles</a>
+            <Link className="text-gray-600 hover:text-gray-800 ml-6" href='/ Consoles'>Video Games & Consoles</Link>
           </li>
           <li>
-            <a className="text-gray-600 hover:text-gray-800 ml-6">Waterproof Headphones</a>
+            <Link className="text-gray-600 hover:text-gray-800 ml-6" href='/ Headphones'>Waterproof Headphones</Link>
           </li>
         </nav>
       </div>
@@ -70,19 +71,19 @@ function Footer() {
         </h2>
         <nav className="list-none mb-10">
           <li>
-            <a className="text-gray-600 hover:text-gray-800" href='/Account' >My Account</a>
+            <Link className="text-gray-600 hover:text-gray-800" href='/Account' >My Account</Link>
           </li>
           <li>
-            <a className="text-gray-600 hover:text-gray-800">Discount</a>
+            <Link className="text-gray-600 hover:text-gray-800" href='/ Discount'>Discount</Link>
           </li>
           <li>
-            <a className="text-gray-600 hover:text-gray-800">Returns</a>
+            <Link className="text-gray-600 hover:text-gray-800" href='/ Returns'>Returns</Link>
           </li>
           <li>
-            <a className="text-gray-600 hover:text-gray-800">Orders History</a>
+            <Link className="text-gray-600 hover:text-gray-800" href='/ History'>Orders History</Link>
           </li>
           <li>
-            <a className="text-gray-600 hover:text-gray-800">Order Tracking</a>
+            <Link className="text-gray-600 hover:text-gray-800" href='/ Tracking'>Order Tracking</Link>
           </li>
         </nav>
       </div>
@@ -92,22 +93,22 @@ function Footer() {
         </h2>
         <nav className="list-none mb-10">
           <li>
-            <a className="text-gray-600 hover:text-gray-800" href='/Blog'>Blog</a>
+            <Link className="text-gray-600 hover:text-gray-800" href='/Blog'>Blog</Link>
           </li>
           <li>
-            <a className="text-gray-600 hover:text-gray-800" href='/Shop'>Browse the Shop</a>
+            <Link className="text-gray-600 hover:text-gray-800" href='/Shop'>Browse the Shop</Link>
           </li>
           <li>
-            <a className="text-gray-600 hover:text-gray-800">Category</a>
+            <Link className="text-gray-600 hover:text-gray-800" href='/Category'>Category</Link>
           </li>
           <li>
-            <a className="text-gray-600 hover:text-gray-800" href='/Pages'>Pre-Built Pages</a>
+            <Link className="text-gray-600 hover:text-gray-800" href='/Pages'>Pre-Built Pages</Link>
           </li>
           <li>
-            <a className="text-gray-600 hover:text-gray-800">Visual Composer Elements</a>
+            <Link className="text-gray-600 hover:text-gray-800" href='/Element'>Visual Composer Elements</Link>
           </li>
           <li>
-            <a className="text-gray-600 hover:text-gray-800">WooCommerce Pages</a>
+            <Link className="text-gray-600 hover:text-gray-800" href='/ Pages'>WooCommerce Pages</Link>
           </li>
         </nav>
       </div>

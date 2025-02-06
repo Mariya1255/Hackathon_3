@@ -15,21 +15,21 @@ const TopBar = () => {
         {/* Left Section */}
         <div className="flex items-center justify-center gap-6 w-full sm:w-auto">
           {/* Email */}
-          <a
+          <Link
             href="mailto:mhhasanul@gmail.com"
             className="flex items-center gap-2 hover:text-gray-200"
           >
             <FaEnvelope />
             <span>mhhasanul@gmail.com</span>
-          </a>
+          </Link>
           {/* Phone */}
-          <a
+          <Link
             href="tel:1234567890"
             className="flex items-center gap-2 hover:text-gray-200"
           >
             <FaPhoneAlt />
             <span>(12345)67890</span>
-          </a>
+          </Link>
         </div>
 
         {/* Right Section */}
@@ -70,21 +70,21 @@ const TopBar = () => {
           </div>
 
           {/* Login */}
-          <a href="/Account" className="flex items-center gap-2 cursor-pointer hover:text-gray-200">
+          <Link href="/Account" className="flex items-center gap-2 cursor-pointer hover:text-gray-200">
             <FaUser />
             <span>Login</span>
-          </a>
+          </Link>
 
           {/* Wishlist */}
-          <a href="/Wishlist" className="flex items-center gap-2 cursor-pointer hover:text-gray-200">
+          <Link href="/Wishlist" className="flex items-center gap-2 cursor-pointer hover:text-gray-200">
             <FaHeart />
             <span>Wishlist</span>
-          </a>
+          </Link>
 
           {/* Cart */}
-          <a href="/Cart" className="cursor-pointer hover:text-gray-200">
+          <Link href="/Cart" className="cursor-pointer hover:text-gray-200">
             <FaShoppingCart />
-          </a>
+          </Link>
         </div>
       </div>
     </div>
