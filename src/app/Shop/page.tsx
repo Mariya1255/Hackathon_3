@@ -34,7 +34,9 @@ const ShopPage = () => {
       <div className="py-28 px-8">
         <h1 className="text-4xl font-bold">Shop List</h1>
         <div className="flex items-center gap-2">
-         <Link href="/" className="text-gray-700 hover:underline">Home</Link>
+         <Link href="/"> 
+         <span className="text-gray-700 hover:underline">Home</span>
+         </Link>
           <p>Pages</p>
           <p className="text-[#FB2E86]">Shopping List</p>
         </div>
