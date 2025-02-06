@@ -125,21 +125,21 @@ function Footer() {
       </p>
       <span className="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start">
       <Link 
-      target='blank' href={"https://www.facebook.com/profile.php?id=100089300760881"} className="text-gray-900">
+      target='blank' rel="noopener noreferrer" href={"https://www.facebook.com/profile.php?id=100089300760881"} className="text-gray-900">
       <FaFacebook className='text-3xl ' />
       </Link>
 
       <Link
-      target='blank' href={"https://vercel.com/mariya-khans-projects"} className="ml-3 text-gray-900">
+      target='blank'  rel="noopener noreferrer" href={"https://vercel.com/mariya-khans-projects"} className="ml-3 text-gray-900">
       <IoLogoVercel className='text-3xl' />
       </Link>
       
       <Link
-      target='blank' href={"https://www.linkedin.com/in/mariya-khan-3072152b6?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"} className="ml-3 text-gray-900">
+      target='blank' rel="noopener noreferrer" href={"https://www.linkedin.com/in/mariya-khan-3072152b6?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"} className="ml-3 text-gray-900">
         <FaLinkedin className='text-3xl ' />
       </Link>
       <Link
-      target='blank' href={"https://github.com/Mariya1255"} className="ml-3 text-gray-900">
+      target='blank' rel="noopener noreferrer" href={"https://github.com/Mariya1255"} className="ml-3 text-gray-900">
         <FaGithub className='text-3xl ' />
       </Link>
     </span>

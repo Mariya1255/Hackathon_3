@@ -27,12 +27,12 @@ function Navbar() {
         setSearchResults([]);
         return;
       }
-      
-      const query = `[_type == "product" && name match "${searchQuery}"] {
+
+      const query = `*[_type == "product" && name match $searchQuery] {
         _id, name, price, image, slug
       }`;
-      
-      const results = await client.fetch(query);
+
+      const results = await client.fetch(query, { searchQuery });
       setSearchResults(results);
     };
 
@@ -59,7 +59,7 @@ function Navbar() {
         <div className='sm:w-full md:w-[80%] flex items-center justify-between h-full px-4'>
           {/* Logo */}
           <div className="flex items-center justify-center">
-            <Link href={'/'}>
+            <Link href='/'>
               <h2 className="title-font font-extrabold text-blue-950 tracking-widest text-[34px] mb-0">
                 Hekto
               </h2>
@@ -69,21 +69,20 @@ function Navbar() {
           {/* Center Section: Navigation Links */}
           <div className="hidden sm:flex items-center gap-x-8">
             <ul className="flex gap-x-8 items-center">
-              <li><Link className="hover:text-[#FB2E86] transition-colors" href="/">Home</Link></li>
+              <li>
+                <Link className="hover:text-[#FB2E86] transition-colors" href="/">Home</Link>
+              </li>
               <li className="relative">
                 <button className="hover:text-[#FB2E86] transition-colors" onClick={() => setIsPagesDropdownOpen(!isPagesDropdownOpen)}>
                   Pages
                 </button>
                 {isPagesDropdownOpen && (
                   <ul className="absolute top-full mt-2 bg-white shadow-md rounded-md text-black text-sm">
-                    <li className="px-4 py-2 hover:bg-gray-100"><Link href="/Cart">Cart</Link></li>
-                    <li className="px-4 py-2 hover:bg-gray-100"><Link href="/Checkout">Billing Details</Link></li>
-                    <li className="px-4 py-2 hover:bg-gray-100"><Link href="/Ordercompleted">Order Completed</Link></li>
-                    <li className="px-4 py-2 hover:bg-gray-100"><Link href="/About">About Us</Link></li>
-                    <li className="px-4 py-2 hover:bg-gray-100"><Link href="/Contact">Contact Us</Link></li>
-                    <li className="px-4 py-2 hover:bg-gray-100"><Link href="/Account">My Account</Link></li>
-                    <li className="px-4 py-2 hover:bg-gray-100"><Link href="/Creatorpage">About Creator</Link></li>
-                    <li className="px-4 py-2 hover:bg-gray-100"><Link href="/Faq">FAQ</Link></li>
+                    {["Cart", "Checkout", "Ordercompleted", "About", "Contact", "Account", "Creatorpage", "Faq"].map((page) => (
+                      <li key={page} className="px-4 py-2 hover:bg-gray-100">
+                        <Link href={`/${page}`}>{page.replace(/([A-Z])/g, ' $1').trim()}</Link>
+                      </li>
+                    ))}
                   </ul>
                 )}
               </li>
@@ -95,7 +94,7 @@ function Navbar() {
 
           {/* Right Section */}
           <div className='flex gap-x-4 items-center'>
-            <div className='hidden lg:flex w-full max-w-xs bg-gray-200 items-center relative'>
+            <div ref={searchRef} className='hidden lg:flex w-full max-w-xs bg-gray-200 items-center relative'>
               <input
                 className='w-90 p-2 bg-white border border-gray-200 text-[20px] rounded-l-md'
                 type="search"
@@ -104,21 +103,21 @@ function Navbar() {
                 onChange={(e) => setSearchQuery(e.target.value)}
               />
               <FontAwesomeIcon icon={faSearch} className="text-xl h-[36px] bg-pink-600 px-2 py-2 text-white rounded-r-md" />
+              
               {searchResults.length > 0 && (
                 <ul className="absolute top-full left-0 w-full bg-white shadow-md rounded-md text-black mt-2 z-50">
                   {searchResults.map((product) => (
                     <li key={product._id} className="flex items-center p-2 hover:bg-gray-100">
                       {product.image && (
-
                         <Image
-                          src={urlFor(product.image).url()}
+                          src={urlFor(product.image).url() || ""}
                           alt={product.name}
                           className="w-10 h-10 object-cover rounded-md mr-2"
                           width={150}
                           height={150}
                         />
                       )}
-                      <Link href={`/product/${product.slug.current}`} className="text-sm">
+                      <Link href={`/product/${product.slug?.current || "#"}`} className="text-sm">
                         {product.name} - ${product.price}
                       </Link>
                     </li>
