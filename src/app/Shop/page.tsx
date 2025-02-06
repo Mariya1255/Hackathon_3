@@ -3,6 +3,7 @@ import { client } from '../../sanity/lib/client';
 import { Product } from '../../type/Product';
 import { useState, useEffect } from 'react';
 import ProductListing from '../components/ProductListing';
+import Link from 'next/link';
 
 const ShopPage = () => {
   const [products, setProducts] = useState<Product[]>([]);
@@ -33,7 +34,7 @@ const ShopPage = () => {
       <div className="py-28 px-8">
         <h1 className="text-4xl font-bold">Shop List</h1>
         <div className="flex items-center gap-2">
-          <a href="/" className="text-gray-700 hover:underline">Home</a>
+         <Link href="/" className="text-gray-700 hover:underline">Home</Link>
           <p>Pages</p>
           <p className="text-[#FB2E86]">Shopping List</p>
         </div>
