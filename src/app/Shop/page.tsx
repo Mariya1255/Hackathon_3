@@ -35,7 +35,7 @@ const ShopPage = () => {
         <h1 className="text-4xl font-bold">Shop List</h1>
         <div className="flex items-center gap-2">
          <Link href="/"> 
-         <span className="text-gray-700 hover:underline">Home</span>
+         <a className="text-gray-700 hover:underline">Home</a> 
          </Link>
           <p>Pages</p>
           <p className="text-[#FB2E86]">Shopping List</p>
