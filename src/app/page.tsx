@@ -13,7 +13,7 @@ import { Header } from "./components/header";
 import Footer from "./components/footer";
 import Cart from "./components/cart";
 
-
+console.log(process.env.NEXT_PUBLIC_PORT)
 function Homepage() {
     return (<div>
       {/* Comment Section */}
