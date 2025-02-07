@@ -23,6 +23,7 @@ const CartPage = () => {
     handleRemoveFromCart(productId, setCart);
   };
 
+  
   const handleQuantityChange = (productId: string, quantity: number) => {
     updateCartQuantity(productId, quantity);
   };
